@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="assignment2.css">
+</head>
+<body>
+    <div class="container">
+        <textarea name="sentence" id="sentence" placeholder="Enter Any Sentence......" rows="6"></textarea>
+        <div class="input_contaianer">
+            <input id="letter" type="text" placeholder="Enter Any Letter">
+        </div>
+        
+        <button onclick="findString()" id="submit">SUBMIT</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const sentence = document.getElementById('sentence');
+        const letter = document.getElementById('letter');
+        const submit = document.getElementById('submit');
+        const result = document.getElementById('result');
+        let text;
+        const findString = () =>{
+            let str = sentence.value.toString();
+            let char = letter.value.toString();
+            let index =  str.search(char);
+            if(!str == "" && !char == ""){
+                if(str.includes(char)){
+                text = str.substring(index);
+                result.innerText = text;  
+                }
+                else{
+                 result.innerText = "Letter not present in sentence !"; 
+                }
+            }else{
+                result.innerText = "Please Fill the blanks !"; 
+                
+            }
+            
+            
+            }
+
+    </script>
+</body>
+</html>
